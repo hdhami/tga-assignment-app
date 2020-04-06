@@ -2,41 +2,40 @@
 version: 2.1
 # Use a package of configuration called an orb.
 orbs:
-  heroku: circleci/heroku@1.0.1
+    heroku: circleci/heroku@1.0.1
 # Create jobs for workflows
 jobs:
-  build:
-    working_directory: ~/tga-assignment-app
-    docker:
-      - image: "circleci/node:lts"
-    steps:
-      - checkout
-      - restore_cache:
-          key: npm-package-{{ checksum "app/package.json" }}
-      - run:
-          name: "Install App Dependencies"
-          command: |
-            cd app
-            npm install
-      - save_cache:
-          paths:
-            - app/node_modules
-          key: npm-package-{{ checksum "app/package.json" }}
-      - persist_to_workspace:
-          root: ~/tga-assignment-app/app
-          paths:
-            - next
-            - node_modules
-            - pages
-            - next.config.js
+    build:
+        working_directory: ~/tga-assignment-app
+        docker:
+            - image: 'circleci/node:lts'
+        steps:
+            - checkout
+            - restore_cache:
+                  key: npm-package-{{ checksum "package.json" }}
+            - run:
+                  name: 'Install App Dependencies'
+                  command: |
+                      npm install
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: npm-package-{{ checksum "package.json" }}
+            - persist_to_workspace:
+                  root: ~/tga-assignment-app
+                  paths:
+                      - next
+                      - node_modules
+                      - pages
+                      - next.config.js
 
 workflows:
-  heroku_deploy:
-    jobs:
-      - build
-      - heroku/deploy-via-git:
-          requires:
-            - build # only run deploy-via-git job if the build job has completed
-          filters:
-            branches:
-              only: master
+    heroku_deploy:
+        jobs:
+            - build
+            - heroku/deploy-via-git:
+                  requires:
+                      - build # only run deploy-via-git job if the build job has completed
+                  filters:
+                      branches:
+                          only: master
