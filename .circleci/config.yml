@@ -6,21 +6,22 @@ orbs:
 # Create jobs for workflows
 jobs:
   build:
-    working_directory: ~/tga-assignment-app/app
+    working_directory: ~/tga-assignment-app
     docker:
       - image: "circleci/node:lts"
     steps:
       - checkout
       - restore_cache:
-          key: npm-package-{{ checksum "package.json" }}
+          key: npm-package-{{ checksum "app/package.json" }}
       - run:
           name: "Install App Dependencies"
           command: |
+            cd app
             npm install
       - save_cache:
           paths:
-            - node_modules
-          key: npm-package-{{ checksum "package.json" }}
+            - app/node_modules
+          key: npm-package-{{ checksum "app/package.json" }}
       - persist_to_workspace:
           root: ~/tga-assignment-app/app
           paths:
