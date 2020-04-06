@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "next",
         "build": "next build && npm run start",
-        "start": "next start"
+        "start": "NODE_ENV=production next start"
     },
     "author": "Harish Dhami",
     "license": "ISC",
