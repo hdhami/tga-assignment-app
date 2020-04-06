@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "description": "fullstack javascript app",
     "scripts": {
-        "dev": "node server.js",
-        "build": "NODE_ENV=production next build && npm run start",
-        "start": "NODE_ENV=production node server.js"
+        "dev": "next",
+        "build": "next build",
+        "start": "next start"
     },
     "author": "Harish Dhami",
     "license": "ISC",
