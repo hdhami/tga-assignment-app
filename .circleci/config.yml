@@ -12,15 +12,15 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: 'v1-package-{{ checksum "package.json" }}'
+          key: npm-package-{{ checksum "package.json" }}
       - run:
           name: "Install App Dependencies"
           command: |
             npm install
       - save_cache:
           paths:
-            - "node_modules"
-          key: 'v1-package-{{ checksum "package.json" }}'
+            - node_modules
+          key: npm-package-{{ checksum "package.json" }}
       - persist_to_workspace:
           root: ~/tga-assignment-app/app
           paths:
