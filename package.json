@@ -4,7 +4,7 @@
     "description": "fullstack javascript app",
     "scripts": {
         "dev": "next",
-        "build": "next build && npm run start",
+        "build": "NODE_ENV=production next build && npm run start",
         "start": "NODE_ENV=production next start"
     },
     "author": "Harish Dhami",
