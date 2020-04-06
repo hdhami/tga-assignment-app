@@ -3,13 +3,14 @@
     "version": "1.0.0",
     "description": "fullstack javascript app",
     "scripts": {
-        "dev": "next",
+        "dev": "node server.js",
         "build": "NODE_ENV=production next build && npm run start",
-        "start": "NODE_ENV=production next start"
+        "start": "NODE_ENV=production node server.js"
     },
     "author": "Harish Dhami",
     "license": "ISC",
     "dependencies": {
+        "express": "^4.17.1",
         "next": "^9.3.4",
         "react": "^16.13.1",
         "react-dom": "^16.13.1"
