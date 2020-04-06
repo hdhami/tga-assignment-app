@@ -1,0 +1,1 @@
+{"name":"tga-ssr-app","version":"1.0.0","description":"fullstack javascript app","scripts":{"dev":"next","build":"next build"},"author":{"name":"Harish Dhami"},"license":"ISC","dependencies":{"next":"^9.3.4","react":"^16.13.1","react-dom":"^16.13.1"},"devDependencies":{"prettier":"^2.0.3"},"readme":"ERROR: No README data found!","_id":"tga-ssr-app@1.0.0"}
