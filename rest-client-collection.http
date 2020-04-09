@@ -1,0 +1,13 @@
+
+
+GET http://hn.algolia.com/api/v1/items/1
+accept: application/json
+
+###
+
+GET http://hn.algolia.com/api/v1/users/pg
+
+###
+
+
+GET http://hn.algolia.com/api/v1/search?tags=front_page
