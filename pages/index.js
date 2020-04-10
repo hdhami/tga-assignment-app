@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react';
 import getConfig from 'next/config';
 import fetch from 'isomorphic-unfetch';
-import Spinner from '../components/spinner';
+
+const Feed = ({ feed }) => {
+    return <div>{feed.title}</div>;
+};
+const Feeds = ({ hits }) => {
+    return hits.map((feed) => <Feed key={feed.objectID} feed={feed} />);
+};
 
 const {
     publicRuntimeConfig: { FRONTPAGE_STORIES_API_ENDPOINT }
@@ -10,7 +16,8 @@ const HomePage = ({ hits = [] }) => {
     useEffect(() => {
         console.log(hits);
     });
-    return hits.length !== 0 ? <div>Welcome To Home Page!</div> : <Spinner />;
+
+    return <Feeds hits={hits} />;
 };
 
 HomePage.getInitialProps = async function () {
