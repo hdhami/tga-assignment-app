@@ -21,13 +21,20 @@ const HomePage = ({ hits = [] }) => {
     return <Feeds hits={hits} />;
 };
 
-// HomePage.getInitialProps = async function () {
-//     const res = await fetch(FRONTPAGE_STORIES_API_ENDPOINT);
-//     const data = await res.json();
+HomePage.getInitialProps = async () => {
+    // const res = await fetch(FRONTPAGE_STORIES_API_ENDPOINT);
+    // const data = await res.json();
+    const data = {
+        hits: [
+            {
+                title: 'Harish'
+            }
+        ]
+    };
 
-//     return {
-//         hits: data.hits
-//     };
-// };
+    return {
+        hits: data.hits
+    };
+};
 
 export default HomePage;
