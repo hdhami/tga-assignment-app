@@ -22,6 +22,7 @@ const HomePage = ({ hits = [] }) => {
 };
 
 HomePage.getInitialProps = async () => {
+    console.log('======================API URL==========================', FRONTPAGE_STORIES_API_ENDPOINT);
     const res = await fetch(FRONTPAGE_STORIES_API_ENDPOINT);
     const data = await res.json();
 
