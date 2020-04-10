@@ -1,24 +1,33 @@
 import React, { useEffect } from 'react';
 import getConfig from 'next/config';
 import fetch from 'cross-fetch';
-
-const Feed = ({ feed }) => {
-    return <div>{feed.title}</div>;
-};
-const Feeds = ({ hits }) => {
-    return hits.map((feed) => <Feed key={feed.objectID} feed={feed} />);
-};
+import Container from '../core-components/layout/container';
+import PageHeader from '../core-components/layout/page-header';
+import PageFooter from '../core-components/layout/page-footer';
+import Main from '../core-components/layout/main';
+import Header from '../components/header';
+import Feeds from '../components/feeds';
 
 const {
     publicRuntimeConfig: { FRONTPAGE_STORIES_API_ENDPOINT }
 } = getConfig();
 
-const HomePage = ({ hits = [] }) => {
+const HomePage = ({ hits = [], logo, newsLabel, footerTxt, topLabel }) => {
     useEffect(() => {
-        console.log(hits);
+        console.log(hits, logo);
     });
 
-    return <Feeds hits={hits} />;
+    return (
+        <Container>
+            <PageHeader>
+                <Header newsLabel={newsLabel} logo={logo} topLabel={topLabel}></Header>
+            </PageHeader>
+            <Main>
+                <Feeds hits={hits} />
+            </Main>
+            <PageFooter>{footerTxt}</PageFooter>
+        </Container>
+    );
 };
 
 HomePage.getInitialProps = async () => {

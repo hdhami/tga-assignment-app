@@ -24,7 +24,7 @@ jobs:
             - persist_to_workspace:
                   root: ~/tga-assignment-app
                   paths:
-                      - next
+                      - .next
                       - node_modules
                       - pages
                       - next.config.js
