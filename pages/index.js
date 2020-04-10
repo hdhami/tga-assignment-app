@@ -22,15 +22,8 @@ const HomePage = ({ hits = [] }) => {
 };
 
 HomePage.getInitialProps = async () => {
-    // const res = await fetch(FRONTPAGE_STORIES_API_ENDPOINT);
-    // const data = await res.json();
-    const data = {
-        hits: [
-            {
-                title: 'Harish'
-            }
-        ]
-    };
+    const res = await fetch(FRONTPAGE_STORIES_API_ENDPOINT);
+    const data = await res.json();
 
     return {
         hits: data.hits
