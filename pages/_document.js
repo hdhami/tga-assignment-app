@@ -9,11 +9,7 @@ class MyDocument extends Document {
     render() {
         return (
             <Html lang="en">
-                <Head>
-                    <title>HN Feeds</title>
-                    <meta name="Description" content="Category: Universal JS App" />
-                    <meta name="robots" content="all" />
-                </Head>
+                <Head></Head>
                 <body>
                     <Main />
                     <NextScript />

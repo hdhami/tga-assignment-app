@@ -8,7 +8,7 @@ const fonts = `
             font-family: 'Roboto';
             font-weight: 300;
             font-style: normal;
-            font-display: swap;
+            font-display: block;
             src: local('Roboto'),
                 url(${RobotoLight});
             unicode-range: U+000-5FF;
@@ -17,7 +17,7 @@ const fonts = `
             font-family: 'Roboto';
             font-weight: 400;
             font-style: normal;
-            font-display: swap;
+            font-display: block;
             src: local('Roboto'),
                 url(${RobotoRegular});
             unicode-range: U+000-5FF;
@@ -26,7 +26,7 @@ const fonts = `
             font-family: 'Roboto';
             font-weight: 500;
             font-style: normal;
-            font-display: swap;
+            font-display: block;
             src: local('Roboto'),
                 url(${RobotoMedium});
             unicode-range: U+000-5FF;
@@ -35,7 +35,7 @@ const fonts = `
             font-family: 'Roboto';
             font-weight: 700;
             font-style: normal;
-            font-display: swap;
+            font-display: block;
             src: local('Roboto'),
                 url(${RobotoBold});
             unicode-range: U+000-5FF;

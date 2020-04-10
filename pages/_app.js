@@ -1,5 +1,6 @@
-import React from 'react';
-import App, { Container } from 'next/app';
+import React, { Fragment } from 'react';
+import App from 'next/app';
+import Head from 'next/head';
 import GlobalStyle from '../styles/global/app.global-style';
 
 class HNFeeds extends App {
@@ -8,11 +9,17 @@ class HNFeeds extends App {
     }
     render() {
         const { Component, pageProps } = this.props;
+
         return (
-            <Container>
+            <Fragment>
+                <Head>
+                    <title>HN Feeds</title>
+                    <meta name="Description" content="Category: Universal JS App" />
+                    <meta name="robots" content="all" />
+                </Head>
                 <GlobalStyle />
                 <Component {...pageProps} />
-            </Container>
+            </Fragment>
         );
     }
 }
