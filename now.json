@@ -1,0 +1,7 @@
+{
+    "build": {
+        "env": {
+            "FRONTPAGE_STORIES_API_ENDPOINT": "@frontpage-stories-api-endpoint"
+        }
+    }
+}
