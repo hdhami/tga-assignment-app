@@ -12,6 +12,7 @@ class MyDocument extends Document {
                 <Head>
                     <title>HN Feeds</title>
                     <meta name="Description" content="Category: Universal JS App" />
+                    <meta name="robots" content="all" />
                 </Head>
                 <body>
                     <Main />

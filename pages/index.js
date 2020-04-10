@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import getConfig from 'next/config';
-import fetch from 'isomorphic-unfetch';
+import fetch from 'cross-fetch';
 
 const Feed = ({ feed }) => {
     return <div>{feed.title}</div>;
@@ -12,6 +12,7 @@ const Feeds = ({ hits }) => {
 const {
     publicRuntimeConfig: { FRONTPAGE_STORIES_API_ENDPOINT }
 } = getConfig();
+
 const HomePage = ({ hits = [] }) => {
     useEffect(() => {
         console.log(hits);
@@ -20,7 +21,7 @@ const HomePage = ({ hits = [] }) => {
     return <Feeds hits={hits} />;
 };
 
-HomePage.getInitialProps = async function () {
+HomePage.getInitialProps = async () => {
     const res = await fetch(FRONTPAGE_STORIES_API_ENDPOINT);
     const data = await res.json();
 
