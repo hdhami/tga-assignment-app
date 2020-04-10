@@ -17,7 +17,7 @@ const HomePage = ({ hits = [] }) => {
         console.log(hits);
     });
 
-    return <Feeds hits={hits} />;
+    return <div>debugging</div>;
 };
 
 HomePage.getInitialProps = async function () {
