@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import getConfig from 'next/config';
-import fetch from 'isomorphic-unfetch';
+import fetch from 'cross-fetch';
 
 const Feed = ({ feed }) => {
     return <div>{feed.title}</div>;
