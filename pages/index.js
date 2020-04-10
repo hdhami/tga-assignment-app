@@ -12,11 +12,10 @@ const Feeds = ({ hits }) => {
 const {
     publicRuntimeConfig: { FRONTPAGE_STORIES_API_ENDPOINT }
 } = getConfig();
+
 const HomePage = ({ hits = [] }) => {
     useEffect(() => {
-        const res = await fetch(FRONTPAGE_STORIES_API_ENDPOINT);
-        const data = await res.json();
-        console.log(data.hits)
+        console.log(hits);
     });
 
     return <Feeds hits={hits} />;
