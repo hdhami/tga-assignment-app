@@ -11,3 +11,10 @@ GET https://hn.algolia.com/api/v1/users/pg
 
 
 GET https://hn.algolia.com/api/v1/search?tags=front_page
+
+###
+GET https://hn.algolia.com/api/v1/search?page=1&hitsPerPage=5
+
+
+###
+https://hn.algolia.com/api/v1/search?page=0
