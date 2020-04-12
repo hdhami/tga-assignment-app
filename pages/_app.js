@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import App from 'next/app';
 import Head from 'next/head';
-import GlobalStyle from '../styles/global/app.global-style';
 
 const staticProps = require('../resources/staticProps.json');
 
@@ -19,7 +18,6 @@ class HNFeeds extends App {
                     <meta name="Description" content="Category: Universal JS App" />
                     <meta name="robots" content="all" />
                 </Head>
-                <GlobalStyle />
                 <Component {...pageProps} {...staticProps} />
             </Fragment>
         );

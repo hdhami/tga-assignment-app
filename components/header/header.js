@@ -6,7 +6,7 @@ const Header = ({ logo, newsLabel, topLabel }) => {
         <NavContainer>
             <Home>
                 <a href="/">
-                    <img src={logo} />
+                    <img src={logo} alt="home" />
                 </a>
             </Home>
             <Top>

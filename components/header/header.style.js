@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 
-const NavContainer = styled.ul`
+const NavContainer = styled.nav`
     display: flex;
 `;
-const Home = styled.li`
+const Home = styled.div`
     border: 1px white solid;
     a {
         text-decoration: none;
         display: flex;
         color: #000;
     }
+    img {
+        font-size: 8px;
+        height: 18px;
+    }
 `;
-const Top = styled.li`
+const Top = styled.div`
     margin-left: 5px;
     padding: 0 5px;
     a {
@@ -21,7 +25,7 @@ const Top = styled.li`
     }
 `;
 
-const New = styled.li`
+const New = styled.div`
     padding: 0 5px;
     a {
         text-decoration: none;
