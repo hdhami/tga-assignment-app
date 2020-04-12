@@ -69,12 +69,13 @@ const CommentWrap = styled.span`
 const UpvotesWrap = styled.div`
     display: flex;
 `;
-const UpvoteLink = styled.a`
+const UpvoteLink = styled.span`
     background: ${(props) => `url('${props.upvote}')`};
     width: 20px;
     background-size: 10px;
     background-repeat: no-repeat;
     background-position: top;
+    cursor: pointer;
 `;
 
 const LoadMore = styled.div`
@@ -84,7 +85,7 @@ const LoadMore = styled.div`
     font-size: 18px;
     padding-left: 100px;
     a {
-        color: #ff6600;
+        color: #805335;
         text-decoration: none;
     }
 `;

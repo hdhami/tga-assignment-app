@@ -15,12 +15,12 @@ const Upvotes = ({ upvotes, upvote, id, onUpvote }) => {
         <UpvotesWrap>
             <span>{upvotes}</span>
             <UpvoteLink
-                href="#"
                 upvote={upvote}
                 onClick={(ev) => {
-                    ev.preventDefault();
                     onUpvote(id);
                 }}
+                tabIndex="0"
+                aria-label="upvote"
             ></UpvoteLink>
         </UpvotesWrap>
     );
@@ -45,7 +45,7 @@ const LinkedDetails = ({ feed, domain, onHide, id }) => {
             <span className="author-name">{`by ${feed.author}`}</span>
             <TimeAgo className="created-at" datetime={feed.created_at} />
             <a
-                href="#"
+                href="/hide"
                 className="hide-feed"
                 onClick={(ev) => {
                     ev.preventDefault();

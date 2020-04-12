@@ -1,5 +1,6 @@
 import React from 'react';
 import psl from 'psl';
+import Link from 'next/link';
 import Feed from './feed';
 import { FeedsWrap, LoadMore } from './feeds.style';
 
@@ -25,7 +26,9 @@ const Feeds = ({ hits, upvote, currentPage, possiblePages }) => {
             </FeedsWrap>
             {currentPage < possiblePages && (
                 <LoadMore>
-                    <a href={`/?page=${currentPage + 1}`}>More</a>
+                    <Link href={{ pathname: '/news', query: { page: currentPage + 1 } }}>
+                        <a>Load More</a>
+                    </Link>
                 </LoadMore>
             )}
         </>
