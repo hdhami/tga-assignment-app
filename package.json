@@ -21,6 +21,7 @@
         "babel-plugin-styled-components": "^1.10.7",
         "file-loader": "^6.0.0",
         "prettier": "^2.0.3",
-        "psl": "^1.8.0"
+        "psl": "^1.8.0",
+        "timeago-react": "^3.0.0"
     }
 }

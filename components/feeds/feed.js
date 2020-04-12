@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import TimeAgo from 'timeago-react';
 import { FeedWrap, CommentWrap, UpvotesWrap, UpvoteLink } from './feeds.style';
 
 const Comments = ({ numbers }) => {
     return (
         <CommentWrap>
-            <a href="/comments">{numbers}</a>
+            <a href="/comments">{numbers || '-'}</a>
         </CommentWrap>
     );
 };
@@ -24,29 +25,36 @@ const Upvotes = ({ upvotes, upvote, id, onUpvote }) => {
         </UpvotesWrap>
     );
 };
-const Title = ({ title }) => {
-    return <span>{title}</span>;
+const Title = ({ title, feed, domain }) => {
+    return (
+        <div>
+            <span>{title}</span>
+            {(domain && (
+                <a className="domain" href={feed.url}>
+                    {` ( ${domain} ) `}
+                </a>
+            )) ||
+                null}
+        </div>
+    );
 };
 
 const LinkedDetails = ({ feed, domain, onHide, id }) => {
     return (
-        <span>
-            {`(`}
-            <a className="domain" href={feed.url}>
-                {domain}
-            </a>
-            {`) `}
-            {` by ${feed.author} ${feed.created_at} `}
-            {`[ `}
-            <span
-                onClick={() => {
+        <div className="linked-details">
+            <span className="author-name">{`by ${feed.author}`}</span>
+            <TimeAgo className="created-at" datetime={feed.created_at} />
+            <a
+                href="#"
+                className="hide-feed"
+                onClick={(ev) => {
+                    ev.preventDefault();
                     onHide(id);
                 }}
             >
-                Hide
-            </span>
-            {` ]`}
-        </span>
+                {`[ Hide ]`}
+            </a>
+        </div>
     );
 };
 
@@ -99,8 +107,8 @@ const Feed = ({ feed, even, domain, upvote, id }) => {
             <FeedWrap even={even}>
                 <Comments numbers={feed.num_comments} />
                 <Upvotes upvotes={upvoteCount} upvote={upvote} id={id} onUpvote={updateUpvoteCount} />
-                <Title title={feed.title} />
-                <LinkedDetails feed={feed} domain={domain} onHide={onHide} id={id} />
+                <Title title={feed.title} feed={feed} domain={domain} />
+                <LinkedDetails feed={feed} onHide={onHide} id={id} />
             </FeedWrap>
         )) ||
         null
